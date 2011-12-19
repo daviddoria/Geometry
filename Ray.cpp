@@ -2,7 +2,6 @@
 
 #include <limits>
 #include <cmath>
-#include <GL/glut.h>
 
 #include <vgl/vgl_line_3d_2_points.h>
 #include <vgl/vgl_plane_3d.h>
@@ -200,7 +199,8 @@ bool Ray::IntersectBoxRightPlane(const vgl_box_3d<double> &B) const
 
 bool Ray::IntersectTriangle(const Triangle &Tri, double &dist, vgl_point_3d<double> &Intersection) const
 {
-	vgl_line_3d_2_points<double> Line(Origin_, Origin_ + Direction_);
+	//vgl_line_3d_2_points<double> Line(Origin_, Origin_ + Direction_);
+	vgl_line_segment_3d<double> Line(Origin_, Origin_ + Direction_);
 	
 	vgl_triangle_3d_intersection_t Intersect = vgl_triangle_3d_line_intersection(Line, Tri.getVertex(0), Tri.getVertex(1), Tri.getVertex(2), Intersection);
 

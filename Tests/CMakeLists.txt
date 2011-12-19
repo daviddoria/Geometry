@@ -1,19 +1,19 @@
 ENABLE_TESTING()
 
-ADD_EXECUTABLE(TestRotation TestRotation.cpp ${PROJECTS}/VXLHelpers/VXLHelpers.cpp ${PROJECTS}/Geometry/Angles.cpp ${PROJECTS}/Geometry/Transformation.cpp ${PROJECTS}/Tools/Tools.cpp)
+ADD_EXECUTABLE(TestRotation TestRotation.cpp ${PROJECTS}/VXLHelpers/VXLHelpers.cpp ../Angles.cpp ${PROJECTS}/Geometry/Transformation.cpp ${PROJECTS}/Tools/Tools.cpp)
 TARGET_LINK_LIBRARIES(TestRotation ${Libraries})
 ADD_TEST(TestRotation TestRotation)
 
-ADD_EXECUTABLE(TestFitPlane TestFitPlane.cpp ${GeometrySources} ${PROJECTS}/VXLHelpers/VXLHelpers.cpp ${PROJECTS}/Tools/Tools.cpp)
-TARGET_LINK_LIBRARIES(TestFitPlane ${Libraries})
+ADD_EXECUTABLE(TestFitPlane TestFitPlane.cpp ${PROJECTS}/VXLHelpers/VXLHelpers.cpp ${PROJECTS}/Tools/Tools.cpp)
+TARGET_LINK_LIBRARIES(TestFitPlane ${Libraries} libGeometry)
 ADD_TEST(TestFitPlane TestFitPlane)
 
 ADD_EXECUTABLE(TestAligningRotation TestAligningRotation.cpp)
 TARGET_LINK_LIBRARIES(TestAligningRotation ${Libraries})
 ADD_TEST(TestAligningRotation TestAligningRotation)
 
-ADD_EXECUTABLE(TestBestPlane TestBestPlane.cpp ${PROJECTS}/VXLHelpers/VXLHelpers.cpp ${GeometrySources} ${PROJECTS}/Tools/Tools.cpp)
-TARGET_LINK_LIBRARIES(TestBestPlane ${Libraries})
+ADD_EXECUTABLE(TestBestPlane TestBestPlane.cpp ${PROJECTS}/VXLHelpers/VXLHelpers.cpp ${PROJECTS}/Tools/Tools.cpp)
+TARGET_LINK_LIBRARIES(TestBestPlane ${Libraries} libGeometry)
 ADD_TEST(TestBestPlane TestBestPlane)
 
 ADD_EXECUTABLE(TestRayIsSameDirection TestRayIsSameDirection.cpp ${PROJECTS}/Geometry/Ray.cpp ${PROJECTS}/VXLHelpers/VXLHelpers.cpp ${PROJECTS}/Tools/Tools.cpp)
@@ -28,8 +28,8 @@ ADD_EXECUTABLE(TestIsRightHanded TestIsRightHanded.cpp ${PROJECTS}/Geometry/Angl
 TARGET_LINK_LIBRARIES(TestIsRightHanded ${Libraries})
 ADD_TEST(TestIsRightHanded TestIsRightHanded)
 
-ADD_EXECUTABLE(TestLineSegmentRotation TestLineSegmentRotation.cpp ${GeometrySources} ${PROJECTS}/VXLHelpers/VXLHelpers.cpp ${PROJECTS}/Tools/Tools.cpp)
-TARGET_LINK_LIBRARIES(TestLineSegmentRotation ${Libraries})
+ADD_EXECUTABLE(TestLineSegmentRotation TestLineSegmentRotation.cpp ${PROJECTS}/VXLHelpers/VXLHelpers.cpp ${PROJECTS}/Tools/Tools.cpp)
+TARGET_LINK_LIBRARIES(TestLineSegmentRotation ${Libraries} libGeometry)
 ADD_TEST(TestLineSegmentRotation TestLineSegmentRotation)
 
 ADD_EXECUTABLE(TestTransformation TestTransformation.cpp ${PROJECTS}/VXLHelpers/VXLHelpers.cpp ${PROJECTS}/Geometry/Transformation.cpp ${PROJECTS}/Tools/Tools.cpp)

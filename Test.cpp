@@ -15,10 +15,6 @@
 
 #include <VXLHelpers/VXLHelpers.h>
 
-#include <GL/glut.h>
-
-#include <SDLHelpers/SDLHelpers.h>
-
 #include <vtkSmartPointer.h>
 #include <vtkPlane.h>
 #include <vtkPoints.h>
